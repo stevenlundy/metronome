@@ -19,3 +19,26 @@ function getTempo(clickTimes) {
 
   return Math.round(60/(average / 1000));
 }
+
+Vue.component('clicker', {
+  props: {
+    timestamps: {
+        type: Array
+    }
+  },
+  methods: {
+    onClick: function() {
+      this.timestamps.push(new Date());
+    }
+  },
+  template: '<button v-on:click="onClick()">You clicked me {{ timestamps.length }} times.</button>'
+})
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    timestamps: []
+  },
+  methods: {
+  }
+})

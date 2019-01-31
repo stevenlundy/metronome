@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Metronome</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="app">
+    <clicker :timestamps="timestamps"></clicker>
+    <div v-for="t in timestamps">{{t - timestamps[0]}}</div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
